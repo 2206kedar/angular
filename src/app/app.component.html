@@ -1,0 +1,33 @@
+
+<div class="course-card">
+
+    <div class="course-title">
+        {{ childData }}
+    </div>
+    <div class="course-image">
+        <img width="300" alt="Angular Logo"
+        [src]="childData_image">
+    </div>
+    <div class="course-description">
+        {{ childData_long_description }}
+    </div>
+</div>
+
+
+<div class="container text-center">
+    <h1 class="rainbow-text">OUR BLOG</h1>
+    
+    <owl-carousel-o [options]="customOptions">
+        <ng-container *ngFor="let cou of courses">
+            <ng-template carouselSlide><course-card [course]="cou" (notify)="parentMethod($event)"></course-card></ng-template>
+        </ng-container>
+        <!-- <ng-template carouselSlide><course-card [course]="course2"></course-card></ng-template>  
+        <ng-template carouselSlide><course-card [course]="course3"></course-card></ng-template>
+        <ng-template carouselSlide><course-card [course]="course4"></course-card></ng-template>
+        <ng-template carouselSlide><course-card [course]="course5"></course-card></ng-template>    -->
+    </owl-carousel-o>
+</div>
+
+
+
+
